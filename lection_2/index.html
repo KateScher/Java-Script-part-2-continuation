@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lection 2</title>
+    <style>
+      .heading {
+        color: white;
+        text-transform: uppercase;
+        background-color: #ccc;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content"></div>
+    <script>
+      const content = document.querySelector(".content");
+
+      const h1El = document.createElement("h1");
+      h1El.textContent = "h1 element";
+      // h1El.style.backgroundColor = "#ccc"; // не рекомендуется - объемно в js
+      // h1El.style.textAlign = "center"; // не рекомендуется - объемно в js
+      h1El.setAttribute("class", "heading");
+
+      const imgEl = document.createElement("img");
+      imgEl.src = "photo.png"; // добавление атрибута для img
+      // img.alt = 'крутое фото'; // лучше следующим вариантом добавить атрибут
+      imgEl.setAttribute("alt", "крутое фото");
+
+      content.appendChild(h1El);
+      content.appendChild(imgEl);
+    </script>
+  </body>
+</html>
