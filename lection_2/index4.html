@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="menu">
+      <li class="menu__list"><a href="#" class="menu__link">link-1</a></li>
+      <li class="menu__list"><a href="#" class="menu__link">link-2</a></li>
+      <li class="menu__list"><a href="#" class="menu__link">link-3</a></li>
+      <li class="menu__list"><a href="#" class="menu__link">link-4</a></li>
+    </ul>
+    <script>
+      const liElOne = document.querySelector(".menu__list");
+      const linkEl = document.querySelector(".menu__link");
+      const menuEl = document.querySelector(".menu");
+
+      console.log(liElOne.parentElement.firstElementChild);
+      console.log(
+        liElOne.parentElement.lastElementChild.previousElementSibling
+      );
+    </script>
+  </body>
+</html>

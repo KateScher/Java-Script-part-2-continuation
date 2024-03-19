@@ -5,10 +5,10 @@
 // Внутренний отступ 16px
 // Добавить данному блоку класс item_1 (использовать setAttribute)
 
-// const block = document.querySelector (".block");
-// const item = document.createElement ("div");
-// block.appendChild(item);
-// item.textContent = "Элемент внутри";
+const block = document.querySelector(".block");
+const item = document.createElement("div");
+block.appendChild(item);
+item.textContent = "Элемент внутри";
 
 // item.style.color = "blue";
 // item.style.border = "1px solid #000";

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content">
+      <p>Первый параграф</p>
+      <p>Второй параграф</p>
+      <p>Третий параграф</p>
+    </div>
+    <script>
+      const divElement = document.querySelector(".content");
+      // console.log(divElement.childNodes);
+      // console.log(divElement.children);
+
+      // либо через Array/from
+      // Array.from(divElement.childNodes).forEach((childNode) => {
+      //   console.log(
+      //     'childNode "%s" типа "%d"',
+      //     childNode.nodeName,
+      //     childNode.nodeType
+      //   );
+      // });
+
+      // [...divElement.children].forEach((child) => {
+      //   console.log('child "%s" типа "%d"', child.nodeName, child.nodeType);
+      // });
+      //////////
+      console.log(divElement.children);
+
+      [...divElement.children].forEach((element) => {
+        console.log(element);
+      });
+    </script>
+  </body>
+</html>
