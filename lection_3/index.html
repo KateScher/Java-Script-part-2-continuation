@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lection 3</title>
+  </head>
+  <body>
+    <button onclick="console.log('hello click html')" class="button">
+      Купить 1
+    </button>
+
+    <!-- <div onclick="console.log('hello click html')" class="div-button">
+      Купить 2
+    </div> -->
+    <script>
+      // const buttonEl = document.querySelector(".button");
+
+      // buttonEl.onclick = function () {
+      //   console.log("Click js button");
+      // };
+
+      // let count = 0;
+      // buttonEl.onclick = function () {
+      //   count++;
+      //   console.log(`Кликов по кнопке ${count}`); // Каждый раз будет считать клики и выводить данный текст столько раз, сколько нажмешь, а функция выше не будет выводиться
+      // };
+
+      // Переделаем немного код, в одной функции
+      // const buttonEl = document.querySelector(".button");
+      // let count = 0;
+
+      // buttonEl.onclick = function () {
+      //   console.log("Click js button");
+      //   count++;
+      //   console.log(`Кликов по кнопке ${count}`);
+      // };
+
+      // Добавим "слушатель событий" - пишем ae:
+      // const buttonEl = document.querySelector(".button");
+      // let count = 0;
+      // let counter = 0;
+      // buttonEl.onclick = function () {
+      //   console.log("Click js button");
+      //   count++;
+      //   console.log(`Кликов по кнопке ${count}`);
+      // };
+
+      // buttonEl.addEventListener("click", function (e) {
+      //   console.log("click add");
+      // });
+
+      // buttonEl.addEventListener("click", function (e) {
+      //   console.log("click add two");
+      // });
+
+      // Добавим отдельно вызов функции:
+      // const buttonEl = document.querySelector(".button");
+      // let count = 0;
+      // let counter = 0;
+
+      // const click = function () {
+      //   console.log("Click js button");
+      //   count++;
+      //   console.log(`Кликов по кнопке ${count}`);
+      // };
+
+      // button.onclick = click; // либо эту строку через ae - eventlistener:
+      // buttonEl.addEventListener("click", click); // это callback - позвали функцию внутри другой функции
+
+      // Использование более современного способа addEventListener - добавления слушателей событий,
+      // в отличие от вышеописанных способов в след.файле
+    </script>
+  </body>
+</html>

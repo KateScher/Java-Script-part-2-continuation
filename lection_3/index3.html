@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>preventDefault</title>
+  </head>
+  <body>
+    <h1>Ссылка</h1>
+    <a href="https://yandex.ru" class="link">yandex</a>
+
+    <script>
+      const link = document.querySelector(".link");
+
+      link.addEventListener("click", function (e) {
+        e.preventDefault(); // остановка перехода на другую страницу (события); (что-то остановить, также например, обработку формы, покупку товара или спросить пользователя - точно ли он хочет что-то удалить )
+        console.log("hello link");
+      });
+    </script>
+  </body>
+</html>

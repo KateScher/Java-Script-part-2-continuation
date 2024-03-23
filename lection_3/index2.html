@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document 2</title>
+  </head>
+  <body>
+    <!-- <button class="button">Купить 1</button>
+    <button class="button">Купить 2</button>
+    <button class="button">Купить 3</button>
+    <script>
+      const buttonEls = document.querySelectorAll(".button");
+
+      buttonEls.forEach((element) => {
+        element.addEventListener("click", function (event) {
+          // console.log(event.target);
+          const target = event.target; // блок к кот.обращаюсь
+          console.log(target);
+        });
+      });
+    </script> -->
+
+    <!-- // 2й пример
+    <ul class="menu">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+    <script>
+      const menuEl = document.querySelector(".menu");
+
+      const nameFunction = (e) => {
+        console.log(e.target, e.currentTarget);
+      };
+
+      menuEl.addEventListener("click", nameFunction);
+    </script> -->
+
+    <h1>Срабатывание при наведении:</h1>
+    <button class="button">Купить</button>
+    <script>
+      // const buttonEl = document.querySelector(".button");
+
+      // buttonEl.addEventListener("mouseover", function (e) {
+      //   // или mouseleave
+      //   console.log("Не нужно наводить, ты лучше нажми");
+      // });
+      // Реакция на нажатие клавиш - вывод в консоль
+      window.addEventListener("keydown", function (e) {
+        // keyup, keypress
+        console.log(e.key);
+      });
+    </script>
+  </body>
+</html>
