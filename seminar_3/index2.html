@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <ul>
+      <li>первый</li>
+      <li>второй</li>
+      <li>третий</li>
+    </ul>
+    <button class="btn1">Кнопка</button>
+
+    Создать в html три кнопки button с нумерацией (1, 2, 3 соответственно)
+    Добавить клик на кнопку , чтобы в консоль выводилась именно та кнопка на
+    которую мы нажали Добавить кнопку button с текстом 4, которая считает
+    сколько раз на нее нажали и количество нажатий на эту кнопку выводит в
+    консоль Создать кнопку button с текстом 5, При клике на которую, меняется
+    текст данной кнопки на “Вы нажали на эту кнопку” Пургин Антон
+    <button onclick="numberButtonOnClick(1)">1</button>
+    <button onclick="numberButtonOnClick(2)">2</button>
+    <button onclick="numberButtonOnClick(3)">3</button>
+    <button id="btn4" onclick="countClicks()">4</button>
+    <button id="btn5" onclick="changeText()">5</button>
+    <script>
+      let count = 0;
+      function numberButtonOnClick(buttonNum) {
+        console.log("Вы нажали на кнопку " + buttonNum);
+      }
+
+      function countClicks() {
+        count++;
+        console.log("Количество нажатий на кнопку 4: " + count);
+      }
+
+      function changeText() {
+        document.querySelector("#btn5").innerHTML = "Вы нажали на эту кнопку";
+      }
+    </script>
+
+    Создать кнопку, которая добавляем заголовок h1 с текстом, “Новый заголовок,
+    данный элемент нужно расположить после кнопки Создать вторую кнопку, которая
+    будет удалять созданный заголовок h1 Создать третью кнопку, при наведении на
+    которую в консоль будет выводиться текст “вы навели на данную кнопку” , как
+    только вы убираем курсор мыши с кнопки, в консоли должен появиться текст
+    “Наведения на кнопку больше нет” Пургин Антон
+    <button id="addHeaderBtn">Добавить заголовок</button>
+    <button id="removeHeaderBtn">Удалить заголовок</button>
+    <button id="hoverBtn">Наведите на кнопку</button>
+
+    <script>
+      const addHeaderBtn = document.querySelector("#addHeaderBtn");
+      const removeHeaderBtn = document.querySelector("#removeHeaderBtn");
+      const hoverBtn = document.querySelector("#hoverBtn");
+      addHeaderBtn.addEventListener("click", () => {
+        const header = document.createElement("h1");
+        header.textContent = "Новый заголовок";
+        document.body.appendChild(header);
+      });
+
+      removeHeaderBtn.addEventListener("click", () => {
+        const header = document.querySelector("h1");
+        if (header) {
+          header.remove();
+        }
+      });
+
+      hoverBtn.addEventListener("click", () => {
+        console.log("вы навели на данную кнопку");
+      });
+
+      hoverBtn.addEventListener("click", () => {
+        console.log("Наведения на кнопку больше нет");
+      });
+    </script>
+    Алексей Сидоров Создать в html список состоящий из 3-х произвольных
+    элементов li Нужно создать кнопку которая будет добавлять элементы списка с
+    текстом “новый элемент списка” Создать кнопку, которая будет удалять первый
+    элемент из созданного списка Создать кнопку, при клике на которую ей
+    добавляется класс “click”
+    <ul>
+      <li>Первый элемент</li>
+      <li>Второй элемент</li>
+      <li>Третий элемент</li>
+    </ul>
+    <button id="btn1">Добавить элемент</button>
+    <button id="btn2">Удалить первый элемент</button>
+    <button id="btn3">Добавить класс "click"</button>
+    <script>
+      const list = document.querySelector("ul");
+      const btn1 = document.querySelector("#btn1");
+      const btn2 = document.querySelector("#btn2");
+      const btn3 = document.querySelector("#btn3");
+      btn1.addEventListener("click", () => {
+        const newElement = document.createElement("li");
+        newElement.appendChild(document.createTextNode("Новый элемент списка"));
+        list.appendChild(newElement);
+      });
+      btn2.addEventListener("click", () => {
+        list.removeChild(list.childNodes[0]);
+      });
+      btn3.addEventListener("click", () => {
+        btn3.classList.add("click");
+      });
+    </script>
+
+    <ul>
+      <li>Первый элемент</li>
+      <li>Второй элемент</li>
+      <li>Третий элемент</li>
+    </ul>
+    <button id="btn1">Добавить элемент</button>
+    <button id="btn2">Удалить первый элемент</button>
+    <button id="btn3">Добавить класс "click"</button>
+    <script>
+      const list = document.querySelector("ul");
+      const btn1 = document.querySelector("#btn1");
+      const btn2 = document.querySelector("#btn2");
+      const btn3 = document.querySelector("#btn3");
+      btn1.addEventListener("click", () => {
+        const newElement = document.createElement("li");
+        newElement.appendChild(document.createTextNode("Новый элемент списка"));
+        list.appendChild(newElement);
+      });
+      btn2.addEventListener("click", () => {
+        list.removeChild(list.firstElementChild);
+      });
+      btn3.addEventListener("click", () => {
+        btn3.classList.add("click");
+      });
+    </script>
+
+    <ul>
+      <li>Элемент 1</li>
+      <li>Элемент 2</li>
+      <li>Элемент 3</li>
+    </ul>
+    <button onclick="addNewItem()">Добавить элемент</button>
+    <script>
+      function addNewItem() {
+        var list = document.querySelector("ul");
+        var newItem = document.createElement("li");
+        newItem.appendChild(document.createTextNode("новый элемент списка"));
+        list.appendChild(newItem);
+      }
+    </script>
+
+    <button onclick="removeFirstItem()">Удалить первый элемент</button>
+    <script>
+      function removeFirstItem() {
+        var list = document.querySelector("ul");
+        list.removeChild(list.firstElementChild);
+      }
+    </script>
+
+    <button onclick="addClassToButton()">Добавить класс</button>
+    <script>
+      function addClassToButton() {
+        var button = document.querySelector("button");
+        button.classList.add("click");
+      }
+    </script>
+  </body>
+</html>

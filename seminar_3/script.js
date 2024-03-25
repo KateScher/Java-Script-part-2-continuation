@@ -88,7 +88,7 @@ const body = document.querySelector("body");
 // const btn3 = document.createElement("button");
 // btn3.textContent = "Наведение";
 // body.insertAdjacentElement("beforeend", btn3);
-// btn3.addEventListener("mouseover",() => {
+// btn3.addEventListener("mouseover",() => { // Наведение (как hover в html)
 //     console.log(`Навели на кнопку`);
 // })
 // btn3.addEventListener("mouseout",() => {
@@ -100,10 +100,10 @@ const body = document.querySelector("body");
 // Создать кнопку, которая будет удалять первый элемент из созданного списка
 // Создать кнопку, при клике на которую ей добавляется класс “click”
 
-// const list = document.querySelector('ul');
-// const btn = document.createElement("button");
+// const list = document.querySelector('ul');  // поиск списка
+// const btn = document.createElement("button");  // создали кнопку
 // btn.textContent = "Добавить";
-// body.insertAdjacentElement("afterbegin", btn);
+// body.insertAdjacentElement("afterbegin", btn);  // body в 43й строке создали
 // btn.addEventListener("click", () => {
 //     list.insertAdjacentHTML("beforeend", `<li>новый элемент списка</li>`);
 // })
@@ -111,7 +111,7 @@ const body = document.querySelector("body");
 // btnDel.textContent = "Удалить";
 // body.insertAdjacentElement("afterbegin", btnDel);
 // btnDel.addEventListener("click", () => {
-//     list.firstElementChild.remove();
+//     list.firstElementChild.remove();  // удаление 1го ребенка в списке
 // })
 // const addClass = document.createElement("button");
 // addClass.textContent = "Добавить класс";
