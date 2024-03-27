@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lection 4</title>
+  </head>
+  <body>
+    <form class="form">
+      <label
+        ><input
+          type="radio"
+          name="propagation-control"
+          value="stopPropagation"
+        />Stop Propagation</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="propagation-control"
+          value="stopImmediatePropagation"
+        />Stop Immediate Propagation</label
+      >
+    </form>
+
+    <ul>
+      <li>Первый</li>
+      <li>Второй</li>
+      <li>Третий</li>
+    </ul>
+
+    <script>
+      const form = document.querySelector("form");
+      const list = document.querySelector("ul");
+      list.addEventListener(
+        "click",
+        (e) => {
+          console.log("В первом UL в фазе захвата");
+          const propagationControlMethodName =
+            form.elements["propagation-control"].value;
+          console.log(propagationControlMethodName);
+          if (propagationControlMethodName) {
+            // если метод существует
+            e[propagationControlMethodName](); // добавляем
+          }
+        },
+        true
+      );
+      list.addEventListener(
+        "click",
+        () => {
+          console.log("Во втором UL захвата");
+        },
+        true
+      );
+      list.addEventListener("click", () => {
+        console.log("В первом UL в фазе всплытия");
+      });
+      Array.from(list.children).forEach((child) => {
+        child.addEventListener("click", () => {
+          console.log("В каждом LI в фазе всплытия");
+        });
+      });
+    </script>
+  </body>
+</html>
