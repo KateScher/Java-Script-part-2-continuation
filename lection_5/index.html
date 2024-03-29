@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <div class="product">
+      <img class="product__img" src="photo.jpg" alt="photo" />
+      <div class="product__content">
+        <a class="product__name" href="product.html">Название товара</a>
+        <p class="product__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <p class="product__price">55</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img class="product__img" src="photo.jpg" alt="photo" />
+      <div class="product__content">
+        <a class="product__name" href="product.html">Название товара</a>
+        <p class="product__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <p class="product__price">55</p>
+      </div>
+    </div>
+    <script>
+      // let productName = "Новое название"; // неудобно, лучше
+      // const productName = ['Новое название, 'Название товара 2'];
+      // let productPrice = 70; // лучше переведем все в объекты:
+
+      // const productData = {
+      //   name: "Название товара obj",
+      //   price: 80,
+      // }; либо массив из объектов:
+
+      const productData = [
+        {
+          name: "Название товара obj",
+          price: 80,
+        },
+        {
+          name: "Название товара obj 2",
+          price: 80,
+        },
+      ];
+
+      const productNameLink = document.querySelector(".product__name");
+      const productsPrice = document.querySelector(".product__price");
+
+      // productNameLink.textContent = productName;
+      // productsPrice.textContent = productPrice;
+
+      productNameLink.textContent = productData.name;
+      productsPrice.textContent = productData.price;
+    </script>
+  </body>
+</html>
