@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <audio
+      class="audio"
+      controls
+      src="https://ds.cdn7.deliciouspeaches.com/get/cuts/0b/15/0b1583a695c9e9d69f80a2e2bf121008/48202410/Sektor_Gaza_-_Pora_domojj_b128f0d234.mp3"
+      preload="auto"
+    ></audio>
+
+    <script>
+      const audioEl = document.querySelector(".audio");
+
+      audioEl.addEventListener("play", function (e) {
+        console.log("Вы нажали плей");
+      });
+
+      audioEl.addEventListener("pause", function () {
+        console.log("Вы нажали паузу");
+      });
+    </script>
+  </body>
+</html>
