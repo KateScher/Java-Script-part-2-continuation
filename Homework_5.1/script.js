@@ -14,6 +14,10 @@ newData.forEach((element) => {
           src="${element.img}"
           alt="${element.title}"
         />
+        <button class="btn">
+                <img src="Busket_for_fetur.svg" alt="cart" />
+                Add to Cart
+              </button>
       </div>
       <div class="card__text">
         <h3>${element.title}</h3>

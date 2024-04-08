@@ -60,3 +60,9 @@ data.forEach((element) => {
     `
   );
 });
+
+const close = document.querySelectorAll(".close");
+const card = document.querySelectorAll(".card");
+close.addEventListener("click", (e) => {
+  card.remove();
+});

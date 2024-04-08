@@ -24,19 +24,19 @@
 // Если выбран чай, необходимо вывести сообщение “Чай закончился”.
 // Если выбран кофе, необходимо вывести соообщение “кофе закончился”.
 
-// const radio = document.querySelectorAll('input');
-// const btn = document.querySelector('button');
-// const p = document.querySelector('p');
-// btn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     radio.forEach((item) => {
-//         if (item.checked && item.id === "tea") {
-//             p.textContent = "Чай закончился";
-//         } else if (item.checked && item.id === "coffee") {
-//             p.textContent = "Кофе закончился";
-//         }
-//     })
-// })
+const radio = document.querySelectorAll("input");
+const btn = document.querySelector("button");
+const p = document.querySelector("p");
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  radio.forEach((item) => {
+    if (item.checked && item.id === "tea") {
+      p.textContent = "Чай закончился";
+    } else if (item.checked && item.id === "coffee") {
+      p.textContent = "Кофе закончился";
+    }
+  });
+});
 
 // Создать поле ввода (пароль).
 // Кнопка отправить.
