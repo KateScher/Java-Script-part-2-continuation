@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+      voluptates dolorem aspernatur doloremque reiciendis corporis ab maxime
+      quis ipsam assumenda.
+    </p>
+    <script>
+      const pEl = document.querySelector("p");
+      console.log(document.documentElement.scrollHeight); // высота блока (всего параграфа)
+      console.log(document.documentElement.clientHeight); // значение высоты видимой области (экрана)
+      // два похожих метода, можно передавать в переменные
+      console.log(document.documentElement.scrollTop); // сколько прокручено
+      console.log(window.pageYOffset); // смещение
+      window.scrollBy(0, 20);
+
+      // можно навесить в событие слушателя, инфо о кол-ве прокрутки:
+      document.addEventListener("scroll", function (e) {
+        console.log(document.documentElement.scrollTop);
+      });
+      // в консоли отобразятся: высота контента, высота видимого контента, сколько пикселей прокрутили. С помощью этих методов можно реализовать "плавающую" шапку документа. Т.е. при прокрутке всего документа вниз, например, можно заставить исчезнуть шапку, или наоборот появиться.
+    </script>
+  </body>
+</html>

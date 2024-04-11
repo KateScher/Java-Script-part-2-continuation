@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and drop API</title>
+    <style>
+      body {
+        font-family: "Benton Sans", "Helvetica Neue", helvetica, arial,
+          sans-serif;
+        margin: 2em;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .box {
+        border: 3px solid #666;
+        background-color: #ddd;
+        border-radius: 0.5em;
+        padding: 10px;
+        cursor: move;
+      }
+
+      .box.over {
+        border: 3px dotted #666;
+      }
+
+      [draggable] {
+        user-select: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div draggable="true" class="box">A</div>
+      <div draggable="true" class="box">B</div>
+      <div draggable="true" class="box">C</div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        // загрузка страницы
+        let dragSrcEl = null; // переменная элемента (будет хранить блок, который выделяем)
+
+        function handleDragStart(e) {
+          // у области, в которой забираем элемент - появилась прозрачность
+          this.style.opacity = "0.4";
+
+          dragSrcEl = this; // this выбранный элемент
+          console.log(dragSrcEl);
+
+          e.dataTransfer.effectAllowed = "move";
+          e.dataTransfer.setData("text/html", this.innerHTML);
+        }
+
+        function handleDragOver(e) {
+          if (e.preventDefault) {
+            e.preventDefault(); // остановить обработку событий если это ссылка
+          }
+
+          e.dataTransfer.dropEffect = "move"; // функционал DnD, перетаскивание
+
+          return false;
+        }
+
+        function handleDragEnter(e) {
+          this.classList.add("over"); // добавляем класс при наведении на элемент - граница у элемента на который навели - становится пунктирной линией
+        }
+
+        function handleDragLeave(e) {
+          this.classList.remove("over"); // Удаляем класс, когда покинули область наведения
+        }
+
+        function handleDrop(e) {
+          if (e.stopPropagation) {
+            e.stopPropagation(); // останавливает перенаправление браузера при перетаскивании эл-та
+          }
+
+          if (dragSrcEl != this) {
+            // если перетаскиваемый элемент не равен this
+            dragSrcEl.innerHTML = this.innerHTML; // добавляем новый HTML
+            this.innerHTML = e.dataTransfer.getData("text/html");
+          }
+
+          return false;
+        }
+
+        function handleDragEnd(e) {
+          this.style.opacity = "1"; // прозрачность при отмене
+
+          items.forEach(function (item) {
+            item.classList.remove("over"); // очистка класса
+          });
+        }
+
+        let items = document.querySelectorAll(".box");
+        items.forEach(function (item) {
+          item.addEventListener("dragstart", handleDragStart);
+          item.addEventListener("dragenter", handleDragEnter);
+          item.addEventListener("dragover", handleDragOver);
+          item.addEventListener("dragleave", handleDragLeave);
+          item.addEventListener("drop", handleDrop);
+          item.addEventListener("dragend", handleDragEnd);
+        });
+      });
+    </script>
+  </body>
+</html>
